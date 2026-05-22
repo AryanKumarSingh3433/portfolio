@@ -334,55 +334,67 @@ body{
 }
 /* Floating Tech Logos */
 
-.floating-icons i{
+.floating-icons{
   position:fixed;
-  font-size:70px;
-  opacity:0.08;
-  z-index:-1;
-
-  animation:floatIcons 10s linear infinite;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
 }
 
-/* Different Positions */
+.floating-icons i{
+  position:absolute;
+  font-size:80px;
+  opacity:0.15;
 
+  animation:floatIcons 6s ease-in-out infinite;
+}
+
+/* HTML */
 .floating-icons i:nth-child(1){
   top:10%;
-  left:5%;
+  left:10%;
   color:#e34c26;
 }
 
+/* CSS */
 .floating-icons i:nth-child(2){
-  top:30%;
-  left:80%;
+  top:25%;
+  right:10%;
   color:#264de4;
 }
 
+/* JavaScript */
 .floating-icons i:nth-child(3){
-  top:70%;
+  bottom:15%;
   left:15%;
   color:#f0db4f;
 }
 
+/* Python */
 .floating-icons i:nth-child(4){
-  top:80%;
-  left:75%;
+  bottom:10%;
+  right:15%;
   color:#3776ab;
 }
 
+/* C++ */
 .floating-icons i:nth-child(5){
   top:50%;
   left:45%;
   color:#38bdf8;
 }
 
+/* React */
 .floating-icons i:nth-child(6){
-  top:20%;
+  top:15%;
   left:50%;
   color:#61dbfb;
 }
 
 
-/* Animation */
+/* Floating Animation */
 
 @keyframes floatIcons{
 
@@ -391,7 +403,7 @@ body{
   }
 
   50%{
-    transform:translateY(-30px);
+    transform:translateY(-20px);
   }
 
   100%{

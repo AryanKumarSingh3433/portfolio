@@ -34,5 +34,29 @@ const darkBtn = document.getElementById("darkModeBtn");
 darkBtn.addEventListener("click", () => {
   document.body.classList.toggle("light-mode");
 });
+const form = document.getElementById("contactForm");
+const successMsg = document.getElementById("successMsg");
 
+form.addEventListener("submit", async function(e) {
+
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  const response = await fetch(form.action, {
+    method: form.method,
+    body: data,
+    headers: {
+      'Accept': 'application/json'
+    }
+  });
+
+  if (response.ok) {
+    successMsg.style.display = "block";
+    form.reset();
+  } else {
+    alert("Oops! Something went wrong.");
+  }
+
+});
 
