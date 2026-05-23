@@ -1,7 +1,9 @@
 // script.js
 
 // Typing Animation
+// Typing Animation
 const text = ["Web Developer", "Programmer", "CSE Student"];
+
 let count = 0;
 let index = 0;
 let currentText = "";
@@ -14,16 +16,28 @@ let letter = "";
   }
 
   currentText = text[count];
+
   letter = currentText.slice(0, ++index);
 
   document.getElementById("typing").textContent = letter;
 
   if(letter.length === currentText.length){
-    count++;
-    index = 0;
-  }
 
-  setTimeout(type, 150);
+    setTimeout(() => {
+
+      index = 0;
+
+      count++;
+
+      type();
+
+    }, 1000);
+
+  } else {
+
+    setTimeout(type, 150);
+
+  }
 
 })();
 
@@ -58,5 +72,13 @@ form.addEventListener("submit", async function(e) {
     alert("Oops! Something went wrong.");
   }
 
-});
+}); 
+const cursor = document.querySelector(".cursor");
 
+window.addEventListener("mousemove", (e) => {
+
+  cursor.style.left = e.clientX + "px";
+
+  cursor.style.top = e.clientY + "px";
+
+});
